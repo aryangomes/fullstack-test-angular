@@ -5,7 +5,23 @@
   // TODO: adicionar um input e um botão à página
   // TODO: criar um método POST no api.service que envie o texto do input e exiba a resposta na página
 -->
+<div>
+  <header>
+    <h1>Titulo da Página</h1>
 
-<h1>Título da página</h1>
-
-{{ apiGreeting }}
+  </header>
+  <nav>
+    <a href="#">Start</a>
+  </nav>
+  <div>
+    <div>
+      <p>{{ apiGreeting }}</p>
+      <p>{{ dataHoraAtual }}</p>
+    </div>
+    <form method="post">
+      <label for="texto"></label>
+      <input type="text" name="texto" id="texto">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
