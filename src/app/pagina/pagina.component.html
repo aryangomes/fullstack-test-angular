@@ -5,28 +5,35 @@
   // TODO: adicionar um input e um botão à página
   // TODO: criar um método POST no api.service que envie o texto do input e exiba a resposta na página
 -->
-<div>
+<div id="pagina">
   <header>
-    <h1>Titulo da Página</h1>
+    <h1>Título da página</h1>
 
   </header>
-  <nav>
-    <a [routerLink]="[ '/start']">Start</a>
-  </nav>
-  <div>
-    <div>
-      <p>{{ apiGreeting }}</p>
-      <p><strong>Data Hora atual: </strong>
-        {{ dataHoraAtual  | date:'dd/MM/YYYY hh:mm:ss'}}</p>
-    </div>
-    <form [formGroup]="textoForm" (ngSubmit)="onSubmit()">
-      <label for="texto"></label>
-      <input type="text" formControlName="texto" id="texto">
-      <button type="submit">Enviar</button>
-    </form>
+  <div id="container">
+    <nav>
+      <h3>SIDEBAR</h3>
+      <a [routerLink]="[ '/start']">Start</a>
+    </nav>
+    <div id="principal">
+      <div>
+        <p>{{ apiGreeting }}</p>
+        <p><strong>Data Hora atual: </strong>
+          {{ dataHoraAtual  | date:'dd/MM/YYYY HH:mm:ss'}}</p>
+      </div>
+      <form [formGroup]="textoForm" (ngSubmit)="onSubmit()">
+        <div>
+          <input type="text" formControlName="texto" id="texto">
+        </div>
+        <div>
 
-    <div>
-      <p *ngIf="texto"><strong>Texto: </strong>{{texto}}</p>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+
+      <div id="resposta-texto">
+        <p *ngIf="texto"><strong>Texto: </strong>{{texto}}</p>
+      </div>
     </div>
   </div>
 </div>
