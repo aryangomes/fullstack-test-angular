@@ -18,10 +18,14 @@
       <p>{{ apiGreeting }}</p>
       <p>{{ dataHoraAtual }}</p>
     </div>
-    <form method="post">
+    <form [formGroup]="textoForm" (ngSubmit)="onSubmit()">
       <label for="texto"></label>
-      <input type="text" name="texto" id="texto">
+      <input type="text" formControlName="texto" id="texto">
       <button type="submit">Enviar</button>
     </form>
+
+    <div>
+      {{texto}}
+    </div>
   </div>
 </div>
