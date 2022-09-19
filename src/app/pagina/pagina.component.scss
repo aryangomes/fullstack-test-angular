@@ -89,3 +89,16 @@ input {
     padding: 1%;
     min-width: 40%;
 }
+
+.erro {
+    background-color: rgba(205, 0, 0, 0.853);
+    color: $white;
+    margin: 5% auto;
+    width: 60%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    text-shadow: 1px 1px 1px $black;
+}

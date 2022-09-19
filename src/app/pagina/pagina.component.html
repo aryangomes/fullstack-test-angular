@@ -20,6 +20,10 @@
         <p>{{ apiGreeting }}</p>
         <p><strong>Data Hora atual: </strong>
           {{ dataHoraAtual  | date:'dd/MM/YYYY HH:mm:ss'}}</p>
+
+        <div *ngIf="mensagemDeErro" class="erro">
+          {{mensagemDeErro}}
+        </div>
       </div>
       <form [formGroup]="textoForm" (ngSubmit)="onSubmit()">
         <div>

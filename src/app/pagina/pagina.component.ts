@@ -16,6 +16,8 @@ export class PaginaComponent implements OnInit {
   public apiGreeting = '';
   public dataHoraAtual = '';
   public texto = '';
+  public mensagemDeErro = '';
+
 
   constructor(
     private apiService: ApiService,
@@ -29,7 +31,7 @@ export class PaginaComponent implements OnInit {
   ngOnInit (): void {
     this.apiService.getHello().pipe(
       catchError((error) => {
-        this.apiGreeting = 'Falha na comunicação com o servidor.';
+        this.mensagemDeErro = 'Falha na comunicação com o servidor.';
         return [];
       })
     ).subscribe((response) => {
@@ -40,7 +42,7 @@ export class PaginaComponent implements OnInit {
 
     this.apiService.recuperarDataHoraAtual().pipe(
       catchError((error) => {
-        this.apiGreeting = 'Não foi possível recuperar a data e hora atual.';
+        this.mensagemDeErro = 'Não foi possível recuperar a data e hora atual.';
         return [];
       })
     ).subscribe((response) => {
@@ -54,7 +56,7 @@ export class PaginaComponent implements OnInit {
     let textoParaEnviar = this.textoForm.value;
     this.apiService.enviarTexto(textoParaEnviar).pipe(
       catchError((error) => {
-        this.apiGreeting = 'Não foi possível enviar o texto.';
+        this.mensagemDeErro = 'Não foi possível enviar o texto.';
         return [];
       })
     ).subscribe((response) => {
