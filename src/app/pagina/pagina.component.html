@@ -16,7 +16,8 @@
   <div>
     <div>
       <p>{{ apiGreeting }}</p>
-      <p>{{ dataHoraAtual }}</p>
+      <p><strong>Data Hora atual: </strong>
+        {{ dataHoraAtual  | date:'dd/MM/YYYY hh:mm:ss'}}</p>
     </div>
     <form [formGroup]="textoForm" (ngSubmit)="onSubmit()">
       <label for="texto"></label>
@@ -25,7 +26,7 @@
     </form>
 
     <div>
-      {{texto}}
+      <p *ngIf="texto"><strong>Texto: </strong>{{texto}}</p>
     </div>
   </div>
 </div>
